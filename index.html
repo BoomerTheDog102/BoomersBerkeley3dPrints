@@ -1,66 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boomer's 3D Prints</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boomer’s 3D Prints</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
-    <header>
-        <h1>Boomer's 3D Prints</h1>
-        <nav>
-            <ul>
-                <li><a href="#prints">Prints</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#custom">Custom Request</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">
+      <h1>Boomer’s 3D Prints</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#prints">Prints</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="prints">
-            <h2>Shop Pre-Made Prints</h2>
-            <div class="product">
-                <img src="images/dino_print.jpg" alt="3D printed dinosaur trinket">
-                <h3>Dino Trinket</h3>
-                <p>$5.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/rocket_print.jpg" alt="3D printed rocket model">
-                <h3>Rocket Model</h3>
-                <p>$8.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <!-- Add more products here -->
-        </section>
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Welcome to Boomer’s 3D Prints</h2>
+      <p>Browse our pre-made 3D prints and trinkets, or request a custom design!</p>
+      <a href="#prints" class="btn">Shop Now</a>
+    </div>
+  </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <form method="post" action="/submit-contact" class="form" role="form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+  <!-- PRINTS GALLERY -->
+  <section id="prints">
+    <h2>Shop Pre-Made Prints</h2>
+    <div class="products-grid">
+      <!-- PRODUCT 1 -->
+      <div class="product-card">
+        <img src="assets/img/prints/print1.jpg" alt="3D Printed Dinosaur Trinket" />
+        <h3>Dino Trinket</h3>
+        <p class="price">$5.00</p>
+        <button class="btn add-to-cart" data-name="Dino Trinket" data-price="5.00">Add to Cart</button>
+      </div>
+      <!-- PRODUCT 2 -->
+      <div class="product-card">
+        <img src="assets/img/prints/print2.jpg" alt="3D Printed Rocket Model" />
+        <h3>Rocket Model</h3>
+        <p class="price">$8.00</p>
+        <button class="btn add-to-cart" data-name="Rocket Model" data-price="8.00">Add to Cart</button>
+      </div>
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+        <img src="assets/img/prints/print3.jpg" alt="3D Printed Trinket Box" />
+        <h3>Trinket Box</h3>
+        <p class="price">$10.00</p>
+        <button class="btn add-to-cart" data-name="Trinket Box" data-price="10.00">Add to Cart</button>
+      </div>
+      <!-- …add more products as you like—dup the .product-card block and swap image/name/price -->
+    </div>
+  </section>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About Boomer’s 3D Prints</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          We’re a small local shop specializing in high-quality, pre-made 3D printed items and trinkets. Each piece is carefully printed using premium filaments for durability and aesthetic detail. Whether you’re looking for a fun desk accessory or a collectible keepsake, browse our gallery and add your favorites to cart. 
+        </p>
+        <p>
+          If you need something custom-designed, scroll down to the Contact section or email us directly at 
+          <a href="mailto:custom@boomers3dprints.com">custom@boomers3dprints.com</a>.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="assets/img/about/about1.jpg" alt="3D printing workshop" />
+      </div>
+    </div>
+  </section>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-content">
+      <form id="contact-form" action="mailto:info@boomers3dprints.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="Name" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="Email" required />
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message / Custom Request</label>
+          <textarea id="cf-message" name="Message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Email:</strong> info@boomers3dprints.com</p>
+        <p><strong>Custom Requests:</strong> <a href="mailto:custom@boomers3dprints.com">custom@boomers3dprints.com</a></p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+      </div>
+    </div>
+  </section>
 
-                <button type="submit">Send</button>
-            </form>
-        </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Boomer’s 3D Prints. All rights reserved.</p>
+  </footer>
 
-        <section id="custom">
-            <h2>Request a Custom Print</h2>
-            <p>If you want a custom 3D print or a specific design, feel free to email us your request directly:</p>
-            <p>Email: <a href="mailto:custom@boomers3dprints.com">custom@boomers3dprints.com</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Boomer's 3D Prints. All rights reserved.</p>
-    </footer>
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
 </body>
 </html>
